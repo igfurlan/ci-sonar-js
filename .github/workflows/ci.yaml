@@ -14,7 +14,8 @@ jobs:
         with:
           node-version: 16
       - name: Install node dependencies
-        run: npm ci
+        run: npm install
+      - run: npm ci
       - run: npm install jest @types/jest sonar-scanner --only-dev
       - run: npm run build --if-present
       - run: npm test
